@@ -235,79 +235,86 @@ pomodoroMechanics();
 // const currentTimeString = new Date().toLocaleTimeString();
 // console.log(currentTimeString);
 // Example output (varies by browser/locale): "11:30:01 AM" or "11:30:01"
-
-async function weatherAPICall() {
-  let API_Key = "a44f28b2ca74443c89a155218252910";
-  let response = await fetch(
-    `https://api.weatherapi.com/v1/current.json?key=${API_Key}&q=nanded`
-  );
-  let data = await response.json();
-  document.querySelector(".celcius span").textContent = Math.floor(
-    data.current.temp_c
-  );
-  document.querySelector(".location").textContent =
-    data.location.name + ", " + data.location.region;
-  document.querySelector(".condition").textContent =
-    data.current.condition.text;
-}
-
-weatherAPICall();
-
-let weekDays = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-
-let months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-
-function dataDay() {
-  let date = new Date();
-  document.querySelector(".mmddyyyy").textContent =
-    date.getDate() + " " + months[date.getMonth()] + ", " + date.getFullYear();
-  document.querySelector(".day-time").textContent =
-    weekDays[date.getDay()] +
-    ", " +
-    String(date.getHours()).padStart(2, "0") +
-    ":" +
-    String(date.getMinutes()).padStart(2, "0") +
-    ":" +
-    String(date.getSeconds()).padStart(2, "0");
-}
-
-setInterval(() => {
-  dataDay();
-}, 1000);
-
-let headerImg = document.querySelector("header");
-
-function slideShow() {
-  let hours = new Date().getHours();
-  if (hours >= 0 && hours < 6) {
-    headerImg.style.backgroundImage = `url("./Images/night.jpg")`;
-  } else if (hours >= 6 && hours < 12) {
-    headerImg.style.backgroundImage = `url("./Images/morning.jpg")`;
-  } else if (hours >= 12 && hours < 18) {
-    headerImg.style.backgroundImage = `url("./Images/afternoon.jpg")`;
-  } else {
-    headerImg.style.backgroundImage = `url("./Images/evening.jpg")`;
+function dashboard() {
+  async function weatherAPICall() {
+    let API_Key = "a44f28b2ca74443c89a155218252910";
+    let response = await fetch(
+      `https://api.weatherapi.com/v1/current.json?key=${API_Key}&q=nanded`
+    );
+    let data = await response.json();
+    document.querySelector(".celcius span").textContent = Math.floor(
+      data.current.temp_c
+    );
+    document.querySelector(".location").textContent =
+      data.location.name + ", " + data.location.region;
+    document.querySelector(".condition").textContent =
+      data.current.condition.text;
   }
+
+  weatherAPICall();
+
+  let weekDays = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  function dataDay() {
+    let date = new Date();
+    document.querySelector(".mmddyyyy").textContent =
+      date.getDate() +
+      " " +
+      months[date.getMonth()] +
+      ", " +
+      date.getFullYear();
+    document.querySelector(".day-time").textContent =
+      weekDays[date.getDay()] +
+      ", " +
+      String(date.getHours()).padStart(2, "0") +
+      ":" +
+      String(date.getMinutes()).padStart(2, "0") +
+      ":" +
+      String(date.getSeconds()).padStart(2, "0");
+  }
+
+  setInterval(() => {
+    dataDay();
+  }, 1000);
+
+  let headerImg = document.querySelector("header");
+
+  function slideShow() {
+    let hours = new Date().getHours();
+    if (hours >= 0 && hours < 6) {
+      headerImg.style.backgroundImage = `url("./Images/night.jpg")`;
+    } else if (hours >= 6 && hours < 12) {
+      headerImg.style.backgroundImage = `url("./Images/morning.jpg")`;
+    } else if (hours >= 12 && hours < 18) {
+      headerImg.style.backgroundImage = `url("./Images/afternoon.jpg")`;
+    } else {
+      headerImg.style.backgroundImage = `url("./Images/evening.jpg")`;
+    }
+  }
+  setInterval(slideShow(), 60 * 1000); //checks every minute
 }
-setInterval(slideShow(), 60 * 1000); //checks every minute
+
+dashboard();
