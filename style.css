@@ -1,0 +1,609 @@
+:root {
+  --pri: #f5f7f8;
+  --sec: #f4ce14;
+  --ter: #495e57;
+  --qua: #45474b;
+  --light: #f1f1f1;
+  --dark: #1f1f1f;
+  --border: #d0d0d0;
+  --info: #ffffbc;
+}
+
+@font-face {
+  font-family: Manrope;
+  font-weight: bold;
+  src: url(./fonts/Manrope-Bold.ttf);
+}
+@font-face {
+  font-family: Manrope;
+  font-weight: medium;
+  src: url(./fonts/Manrope-Medium.ttf);
+}
+@font-face {
+  font-family: Manrope;
+  font-weight: regular;
+  src: url(./fonts/Manrope-Regular.ttf);
+}
+@font-face {
+  font-family: Manrope;
+  font-weight: semibold;
+  src: url(./fonts/Manrope-SemiBold.ttf);
+}
+@font-face {
+  font-family: Manrope;
+  font-weight: light;
+  src: url(./fonts/Manrope-Light.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Manrope, sans-serif;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  /* background: radial-gradient(#ecebff, #1c1b2f) */
+  background: radial-gradient(#e6efea, #2f3e34)
+}
+
+h1 {
+  font-family: Manrope;
+  font-weight: 700;
+  color: var(--dark);
+}
+nav {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  background-color: var(--sec);
+}
+section.allElems {
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  /* justify-content: center; */
+  gap: 20px;
+  position: absolute;
+}
+section.allElems .allFeatures {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+section header{
+  height: 65%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  display: flex;
+}
+
+section header .timings{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px;
+}
+
+section header .timings h1{
+  color: var(--light);
+  font-size: 60px;
+}
+
+.timings p{
+  color: var(--light);
+  font-size: 24px;
+  font-weight: 300;
+}
+
+section header .weather{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  padding: 50px;
+  text-align: center;
+}
+
+section header .weather h2{
+  color: var(--light);
+  font-size: 32px;
+}
+
+.weather p{
+  color: var(--light);
+}
+
+.celcius i{
+  font-weight: 100;
+}
+
+.elem {
+  height: 200px;
+  width: 280px;
+  background-color: var(--light);
+  border-radius: 10px;
+  font-size: 18px;
+  overflow: hidden;
+  position: relative;
+  transition: all ease-in-out 0.2s;
+  cursor: pointer;
+}
+
+.elem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.elem h2 {
+  position: absolute;
+  right: 5%;
+  bottom: 3%;
+  color: var(--pri);
+  font-weight: 100;
+}
+
+.elem:active {
+  scale: 0.95;
+}
+
+/*
+    section.allelems and section .allelems me farak hota hai
+    section.allelems ka matlab hai section element jiska class allelems ho
+    section .allelems ka matlab hai section element ke andar koi bhi element jiska class alle
+*/
+
+.fullElem {
+  height: 100%;
+  width: 100%;
+  background-color: var(--light);
+  padding: 40px;
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--qua);
+  display: none;
+  position: absolute;
+}
+
+.back {
+  padding: 10px 40px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all ease-in-out 0.1s;
+  background-color: transparent;
+  border: 1px solid var(--dark);
+}
+
+.back:hover {
+  background-color: var(--qua);
+}
+
+.back:active {
+  scale: 0.97;
+}
+
+.back i {
+  font-size: 20px;
+  color: var(--dark);
+}
+
+.back:hover i {
+  color: var(--pri);
+}
+
+/* .todo-list-fullPage {
+  display: block;
+} */
+
+.todo-list-fullPage .todo-container {
+  height: 80%;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.todo-list-fullPage .todo-container .addTask {
+  width: 35%;
+  background-color: var(--light);
+  border: 1px solid var(--border);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  height: 100%;
+}
+
+.todo-list-fullPage .todo-container .addTask form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+
+.direction {
+  font-size: 14px;
+  font-weight: 900;
+  background-color: var(--info);
+  padding: 20px;
+  text-align: center;
+  color: var(--ter);
+  border-radius: 6px;
+}
+
+.todo-container .addTask form input {
+  padding: 15px 20px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  outline: none;
+  font-size: 16px;
+}
+.todo-container .addTask form textarea {
+  padding: 15px 20px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  outline: none;
+  font-size: 16px;
+  height: 200px;
+}
+.todo-container .addTask form button {
+  padding: 15px 20px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background-color: var(--ter);
+  color: var(--pri);
+  outline: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+}
+
+.todo-container .addTask form button:active {
+  scale: 0.96;
+}
+
+.todo-list-fullPage .todo-container .allTask {
+  width: 65%;
+  background-color: var(--light);
+  border: 1px solid var(--border);
+  border-left: none;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: auto;
+}
+
+.task {
+  display: flex;
+  align-items: flex-start;
+  font-size: 24px;
+  font-weight: 300;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 20px;
+}
+
+.task:nth-last-child(1) {
+  border-bottom: none;
+}
+
+.task details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.task details summary {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 900;
+  color: var(--ter);
+}
+.task details > p {
+  font-size: 20px;
+  opacity: 0.7;
+}
+
+.task details summary p.false {
+  color: var(--ter);
+}
+
+.task details summary p.true {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.task details summary span {
+  font-size: 10px;
+  background-color: var(--sec);
+  padding: 5px 10px;
+  border-radius: 50px;
+}
+
+.task details summary span.true {
+  opacity: 1;
+}
+.task details summary span.false {
+  opacity: 0;
+}
+
+.task button {
+  padding: 8px 20px;
+  font-size: 16px;
+  border-radius: 50px;
+  border: 1px solid var(--ter);
+  cursor: pointer;
+  transition: all ease 0.2s;
+}
+
+.task button:hover {
+  background-color: var(--ter);
+  color: var(--light);
+}
+
+.task button:active {
+  scale: 0.96;
+}
+
+.check-imp {
+  display: flex;
+  gap: 10px;
+  font-size: 16px;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.check-imp input,
+.check-imp label {
+  cursor: pointer;
+}
+
+.no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Standard property */
+}
+
+.hidden {
+  display: none;
+}
+
+.empty-list-note {
+  position: absolute;
+  left: 38%;
+  top: 28%;
+}
+
+/*Todo list ends here*/
+
+/* .daily-planner-fullPage{
+  display: block;
+} */
+
+.daily-planner-fullPage .day-planner {
+  height: 80%;
+  width: 100%;
+  font-size: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  overflow: auto;
+  padding-top: 10px;
+}
+
+.daily-planner-fullPage .day-planner .day-planner-time {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  width: 49.6%;
+  margin-bottom: 10px;
+}
+
+.day-planner .day-planner-time h2 {
+  position: absolute;
+  top: 0.5%;
+  left: 0.5%;
+  font-size: 14px;
+  color: var(--qua);
+  opacity: 0.6;
+}
+
+.day-planner .day-planner-time input {
+  height: 30px;
+  padding: 30px 20px;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 20px;
+  padding-top: 35px;
+  font-weight: 700;
+  color: var(--ter);
+}
+
+/* Motivation ui  */
+
+.motivation-fullPage {
+  position: relative;
+}
+.motivation-fullPage .motivation-container {
+  height: 50%;
+  width: 40%;
+  border-radius: 20px;
+  background-color: var(--qua);
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.motivation-fullPage .motivation-container::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: var(--sec);
+  scale: 1.05;
+  z-index: 8;
+  border-radius: 30px;
+  filter: blur(50px);
+}
+
+.motivation-fullPage .motivation-container .motivation-wrapper {
+  z-index: 10;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: var(--light);
+  border-radius: 20px;
+  padding: 10px;
+  border: 1px solid var(--border);
+}
+
+.motivation-one {
+  background-color: var(--qua);
+  padding: 20px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.motivation-one h2 {
+  font-size: 20px;
+  color: var(--light);
+}
+
+.motivation-one .reload {
+  font-weight: 100;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all ease 0.1s;
+}
+
+.motivation-one .reload:hover {
+  background-color: var(--ter);
+}
+
+.motivation-one .reload:active {
+  scale: 0.95;
+}
+
+.motivation-two {
+  width: 100%;
+  height: 73%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.motivation-two h1 {
+  font-size: 32px;
+  text-align: center;
+  color: var(--ter);
+  padding: 10px 30px;
+}
+
+.author {
+  font-size: 20px;
+  color: black;
+  font-weight: 300;
+}
+
+.quotes-img {
+  position: absolute;
+  height: 200px;
+  top: 10%;
+  left: -5%;
+  z-index: 8;
+  opacity: 0.05;
+}
+.quotes-img-two {
+  position: absolute;
+  height: 200px;
+  bottom: 0;
+  right: -5%;
+  opacity: 0.05;
+  rotate: 180deg;
+}
+
+/* Motivation complete */
+
+.pomodoro-timer-fullPage{
+  /* display: block; */
+  position: relative;
+}
+
+.pomodoro-timer-fullPage .pomo-timer{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.pomo-timer h1{
+  font-size: 108px;
+  color: var(--qua);
+}
+
+.pomo-timer .status{
+  font-size: 36px;
+  font-weight: 100;
+}
+
+.pomo-timer button{
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: 1px solid var(--ter);
+  cursor: pointer;
+  transition: all ease 0.1s;
+  font-size: 20px;
+  color: var(--ter);
+  box-shadow: 3px 3px 0 var(--qua) ;
+}
+
+.pomo-timer button:hover{
+  background-color:var(--ter);
+  color: var(--light);
+}
+
+.pomo-timer button:active{
+  scale: 0.97;
+  box-shadow: 0 0;
+}
