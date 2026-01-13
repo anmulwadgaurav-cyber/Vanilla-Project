@@ -316,5 +316,23 @@ function dashboard() {
   }
   setInterval(slideShow(), 60 * 1000); //checks every minute
 }
-
 dashboard();
+
+let rootElement = document.documentElement;
+let theme = document.querySelector(".change-theme");
+let flag = 0;
+theme.addEventListener("click", function () {
+  if (flag == 0) {
+    rootElement.style.setProperty("--pri", "red");
+    rootElement.style.setProperty("--sec", "green");
+    rootElement.style.setProperty("--ter", "blue");
+    rootElement.style.setProperty("--qua", "yellow");
+    flag = 1;
+  }else if(flag ==1){
+    rootElement.style.setProperty("--pri", "#f5f7f8");
+    rootElement.style.setProperty("--sec", "#f4ce14");
+    rootElement.style.setProperty("--ter", "#495e57");
+    rootElement.style.setProperty("--qua", "#45474b");
+    flag = 0;
+  }
+});

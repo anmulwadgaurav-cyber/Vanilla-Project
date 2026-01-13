@@ -51,7 +51,7 @@ main {
   width: 100%;
   height: 100%;
   /* background: radial-gradient(#ecebff, #1c1b2f) */
-  background: radial-gradient(#e6efea, #2f3e34)
+  background: radial-gradient(#e6efea, #2f3e34);
 }
 
 h1 {
@@ -72,7 +72,7 @@ h1 {
   font-size: 24px;
   color: var(--light);
 }
-.settings-btn {
+.change-theme {
   background: transparent;
   border: none;
   cursor: pointer;
@@ -80,10 +80,10 @@ h1 {
   font-size: 32px;
   transition: all ease-in-out 0.2s;
 }
-.settings-btn:hover {
+.change-theme:hover {
   color: var(--sec);
 }
-.settings-btn:active {
+.change-theme:active {
   scale: 0.9;
 }
 section.allElems {
@@ -102,7 +102,7 @@ section.allElems .allFeatures {
   gap: 20px;
 }
 
-section header{
+section header {
   height: 50%;
   width: 100%;
   background-size: cover;
@@ -112,7 +112,7 @@ section header{
   display: flex;
 }
 
-section header .timings{
+section header .timings {
   height: 100%;
   width: 50%;
   display: flex;
@@ -122,38 +122,38 @@ section header .timings{
   padding: 50px;
 }
 
-section header .timings h1{
+section header .timings h1 {
   color: var(--light);
   font-size: 60px;
 }
 
-.timings p{
+.timings p {
   color: var(--light);
   font-size: 24px;
   font-weight: 300;
 }
 
-section header .weather{
+section header .weather {
   height: 100%;
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   padding: 50px;
   text-align: center;
 }
 
-section header .weather h2{
+section header .weather h2 {
   color: var(--light);
   font-size: 32px;
 }
 
-.weather p{
+.weather p {
   color: var(--light);
 }
 
-.celcius i{
+.celcius i {
   font-weight: 100;
 }
 
@@ -585,12 +585,12 @@ section header .weather h2{
 
 /* Motivation complete */
 
-.pomodoro-timer-fullPage{
+.pomodoro-timer-fullPage {
   /* display: block; */
   position: relative;
 }
 
-.pomodoro-timer-fullPage .pomo-timer{
+.pomodoro-timer-fullPage .pomo-timer {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -598,17 +598,17 @@ section header .weather h2{
   text-align: center;
 }
 
-.pomo-timer h1{
+.pomo-timer h1 {
   font-size: 108px;
   color: var(--qua);
 }
 
-.pomo-timer .status{
+.pomo-timer .status {
   font-size: 36px;
   font-weight: 100;
 }
 
-.pomo-timer button{
+.pomo-timer button {
   padding: 10px 20px;
   border-radius: 50px;
   border: 1px solid var(--ter);
@@ -616,15 +616,15 @@ section header .weather h2{
   transition: all ease 0.1s;
   font-size: 20px;
   color: var(--ter);
-  box-shadow: 3px 3px 0 var(--qua) ;
+  box-shadow: 3px 3px 0 var(--qua);
 }
 
-.pomo-timer button:hover{
-  background-color:var(--ter);
+.pomo-timer button:hover {
+  background-color: var(--ter);
   color: var(--light);
 }
 
-.pomo-timer button:active{
+.pomo-timer button:active {
   scale: 0.97;
   box-shadow: 0 0;
 }
